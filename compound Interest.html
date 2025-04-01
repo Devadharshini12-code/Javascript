@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>CI calculator</title>
+        
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+   <style>
+    body{
+        background-image: url('./istockphoto-2150241411-1024x102.jpg');
+        background-size: cover;
+        font-family: cursive;
+        width: 100%;
+    }
+        .card{
+            border-radius: 15px;
+        }
+        .card-header{
+            background: palevioletred;
+            color: white;
+            /* border-top-left-radius: 15px;
+            border-top-right-radius: 15px; */
+        }
+        .button:hover{
+            color:honeydew;
+            cursor: grabbing;
+        }
+        #result{
+            font-size: 1.2rem;
+        }
+
+    
+   </style>
+   
+   
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card mt-5">
+                        <div class="card-header text-center">
+                            <h2>Compound Interest Calculator</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="interestForm">
+                                <div class="form-group">
+                                    <label for="principal">Principal Amount:</label>
+                                    <input type="number" class="form-control rounded-pill" id="principal" name="principal" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="rate">Rate of Interest (% per year):</label>
+                                    <input type="number" class="form-control rounded-pill" id="rate" name="rate" step="0.01" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="years">Time Period(years):</label>
+                                    <input type="number" class="form-control rounded-pill" id="years" name="years" required>
+                                </div>
+                                <button type="button"  class="btn btn-dark btn-block rounded-pill font-weight-bold-shadow"
+                                    onclick="calculateInterest()">Calculate</button>
+                            </form>
+                            <div id="result" class="mt-4 text-center text-success font-weight-bold"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+       
+        <script>
+            function calculateInterest() {
+                // Get the values from the form
+                const principal = parseFloat(document.getElementById('principal').value);
+                const rate = parseFloat(document.getElementById('rate').value);
+                const years= parseFloat(document.getElementById('years').value);
+    
+                // Calculate the compound interest
+               
+                const A = principal*(Math.pow((1+rate/100),years));
+                const CI=A-principal;
+    
+                // // Display the result
+                // // var resultMessage = `Compound Interest ${CI.toFixed(2)}`;
+                // //  document.getElementById('result').innerText = resultMessage;
+                 var resultMessage = `After ${years} years, at an interest rate of ${rate}%, your CompoundInterest will be ${CI.toFixed(2)}`;
+                  document.getElementById('result').innerText = resultMessage;
+              
+        }
+
+            
+    
+        </script>
+
+
+    </body>
+</html>

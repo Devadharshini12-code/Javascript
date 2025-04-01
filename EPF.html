@@ -1,0 +1,38 @@
+ <html>
+    <head>
+        <title>EPF calculator</title>
+        <link rel="stylesheet" href="epf.css">
+
+        <script src="epf.js"></script>
+    </head>
+    <body>
+        <div class="calculator">
+            <h1>Employee Provident Fund</h1>
+            <label >Monthly Salary:</label>
+            <input type="number" id="monthlysalary" placeholder="Enter monthlysalary" required>
+        
+            <label > Current Age:</label>
+            <input type="number" id="cAge" placeholder="Enter cAge" required>
+
+            <label >Retirement Age:</label>
+            <input type="number" id="retiredAge" placeholder="Enter retiredage" required>
+
+            <label for>EPF Contribution Rate (%):</label>
+            <input type="number" id="epfRate" placeholder="Enter rate" required>
+        
+            <label for>Annual Salary Increase:</label>
+            <input type="number" id="salaryincrease" placeholder="Enter salaryincrease">
+
+            <label >Rate Of Interest:</label>
+            <input type="number" id="interestrate" placeholder="Enter interestrate">
+
+
+        
+            <button onclick="calculateEPF()">Calculate</button>
+        
+            <div id="result">Result:</div>
+        
+
+    </body>
+</html> 
+
